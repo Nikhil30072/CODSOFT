@@ -1,0 +1,63 @@
+# TO_DO LIST
+def do_list():
+    do = []
+    print("To-Do List Menu")
+    print("1. Add Task")
+    print("2. View Task")
+    print("3. Modify Task")
+    print("4. Delete Task")
+    print("5. Exit") 
+    while True:
+        try:
+            a = int(input("Enter a choice from 1-5: ")) 
+            if a == 1:
+                task = input("Enter the task: ")
+                do.append(task)
+                print("Task added.")
+            elif a == 2:
+                if not do:
+                    print("No tasks to view.")
+                else:
+                    print("View Tasks:")
+                    for idx, task in enumerate(do, start=1):
+                        print(f"{idx}. {task}")
+            elif a == 3:
+                if not do:
+                    print("No tasks to modify.")
+                else:
+                    print("Current Tasks:")
+                    for idx, task in enumerate(do, start=1):
+                        print(f"{idx}. {task}")
+                    x = int(input("Enter the task number to modify: "))
+                    if 1 <= x <= len(do):
+                        new_task = input("Enter the new task description: ")
+                        do[x - 1] = new_task
+                        print("Task updated.")
+                    else:
+                        print("Invalid task number.")
+            elif a == 4:
+                if not do:
+                    print("No tasks to delete.")
+                else:
+                    print("Current Tasks:")
+                    for idx, task in enumerate(do, start=1):
+                        print(f"{idx}. {task}")
+                    x = int(input("Enter the task number to delete: "))
+                    if 1 <= x <= len(do):
+                        deleted = do.pop(x - 1)
+                        print(f"Successfully deleted: '{deleted}'")
+                    else:
+                        print("Invalid task number.")
+            elif a == 5:
+                #
+                if not do:
+                    print("No Task Added.")
+                    break
+                else:
+                    print(f"final task is:{do}")
+                    break
+            else:
+                print("Please enter a correct choice from 1-5.")
+        except ValueError:
+            print("Please enter a valid number.")
+do_list()
