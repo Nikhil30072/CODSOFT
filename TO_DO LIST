@@ -49,7 +49,6 @@ def do_list():
                     else:
                         print("Invalid task number.")
             elif a == 5:
-                #
                 if not do:
                     print("No Task Added.")
                     break
