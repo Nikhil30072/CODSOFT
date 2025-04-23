@@ -1,6 +1,6 @@
 #calculator 
 def calculator():
-    print("calculator")
+    print("Basic calculator")
     print("addition")
     print("Subtraction")
     print("Multiplication") 
